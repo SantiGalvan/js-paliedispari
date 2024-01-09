@@ -14,8 +14,8 @@ body {
 
 /* Section Palindroma */
 #palindroma {
-    background-color: darkturquoise;
-    min-height: 600px;
+    background-color: rgb(105, 235, 238);
+    min-height: 300px;
 }
 
 .form-control {
