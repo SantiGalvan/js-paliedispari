@@ -58,7 +58,7 @@ formUser.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // - 11 recupero il valore dell'input
-    const userWord = userElement.value;
+    const userWord = userElement.value.trim().toLowerCase();
 
     // - 10 Validazione
     if (!userWord || !isNaN(userWord)) {
@@ -76,3 +76,21 @@ formUser.addEventListener('submit', function (event) {
     isPalindrome(userWord);
 
 })
+
+/*
+Pari e Dispari
+
+L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. (con un prompt)
+
+Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+
+Sommiamo i due numeri
+
+Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+Dichiariamo chi ha vinto in console.
+
+Scompongo il problema
+- 1 Recupero gli elementi dal DOM
+- 2 Creo una funzione per generare un numero random
+- 3 
+*/
