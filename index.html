@@ -40,7 +40,7 @@
                     <div class="col-10">
                         <div class="d-flex gap-3 align-items-center justify-content-end">
                             <label class="label-palindroma" for="text">Inserisci una parola</label>
-                            <input type="text" class="form-control" id="text">
+                            <input type="text" class="form-control" id="text" required>
                         </div>
                     </div>
 
@@ -68,28 +68,21 @@
                     <div class="row mb-3">
                         <label for="user-number" class="col-sm-2 col-form-label">Scegli un numero</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="user-number" min="1" max="5">
+                            <input type="number" class="form-control" id="user-number" min="1" max="5" required>
                         </div>
                     </div>
                     <fieldset class="row mb-3">
                         <legend class="col-form-label col-sm-2 pt-0">Pari o Dispari?</legend>
                         <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="even" value="even">
-                                <label class="form-check-label" for="even">
-                                    Pari
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="odd" value="odd">
-                                <label class="form-check-label" for="odd">
-                                    Dispari
-                                </label>
-                            </div>
+                            <select class="form-select form-control" id="select-even-odd">
+                                <option value="even">Pari</option>
+                                <option value="odd">Dispari</option>
+                            </select>
                         </div>
                     </fieldset>
                     <button class="btn btn-primary">Genera</button>
                 </form>
+
 
                 <h4 id="result-even-odd" class="m-4"></h4>
             </div>
