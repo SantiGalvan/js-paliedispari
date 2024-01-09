@@ -25,11 +25,11 @@ Scompongo il problema
 */
 
 // - 1 Prendo gli elementi dal DOM
-const formUser = document.getElementById('form-palindorma');
+const formText = document.getElementById('form-palindorma');
 const resultElement = document.getElementById('result-palindroma');
 const userElement = document.getElementById('text');
 const alertDanger = document.getElementById('alert-danger');
-console.log(formUser, resultElement);
+console.log(formText, resultElement);
 
 // - 2 Creo una funzione per sapere se la parola inserita dall'utente è palindroma o no
 function isPalindrome(string) {
@@ -52,7 +52,7 @@ function isPalindrome(string) {
 }
 
 // - 8 Creo un addEventListener al submit
-formUser.addEventListener('submit', function (event) {
+formText.addEventListener('submit', function (event) {
 
     // - 9 Blocco l'invio del form
     event.preventDefault();
@@ -92,5 +92,24 @@ Dichiariamo chi ha vinto in console.
 Scompongo il problema
 - 1 Recupero gli elementi dal DOM
 - 2 Creo una funzione per generare un numero random
-- 3 
+- 3 Se il valore di isMaxIncludes è vero allora incremento di 1 il max
+- 4 Creo il numero random della cpu
 */
+
+// - 1 Recupero gli elementi dal DOM
+const formNumber = document.getElementById('form-even-odd');
+const resultNumber = document.getElementById('result-even-odd');
+const userNumber = document.getElementById('user-number');
+const userCheckEven = document.getElementById('even');
+const userCheckOdd = document.getElementById('odd');
+console.log(formNumber, resultNumber, userNumber, userCheckEven, userCheckOdd);
+
+// - 2 Creo una funzione per generare un numero random
+function getRandomNumber(min = 1, max = 100, isMaxIncludes = true) {
+
+    // - 3 Se il valore di isMaxIncludes è vero allora incremento di 1 il max
+    if (isMaxIncludes) max++;
+
+    // - 4 Creo il numero random della cpu
+    return Math.floor(Math.random() * (max - min)) + min;
+}
