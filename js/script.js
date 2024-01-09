@@ -94,15 +94,23 @@ Scompongo il problema
 - 2 Creo una funzione per generare un numero random
 - 3 Se il valore di isMaxIncludes è vero allora incremento di 1 il max
 - 4 Creo il numero random della cpu
+- 5 Creo un addEventListener al submit
+- 6 Blocco l'invio del form
+- 7 Recupero i valori degli input
+- 8 Genero il numero casuale della cpu
+- 9 Sommo i due numeri
+- 10 Creo il messaggio
+- 11 Creo un if per il pari
+- 12 Creo un if per il dispari
+- 13 Stampo il messaggio nella pagina
 */
 
 // - 1 Recupero gli elementi dal DOM
 const formNumber = document.getElementById('form-even-odd');
-const resultNumber = document.getElementById('result-even-odd');
-const userNumber = document.getElementById('user-number');
-const userCheckEven = document.getElementById('even');
-const userCheckOdd = document.getElementById('odd');
-console.log(formNumber, resultNumber, userNumber, userCheckEven, userCheckOdd);
+const result = document.getElementById('result-even-odd');
+const userInputNumber = document.getElementById('user-number');
+const userElementEvenOdd = document.getElementById('select-even-odd');
+console.log(formNumber, result, userInputNumber, userElementEvenOdd);
 
 // - 2 Creo una funzione per generare un numero random
 function getRandomNumber(min = 1, max = 100, isMaxIncludes = true) {
@@ -113,3 +121,40 @@ function getRandomNumber(min = 1, max = 100, isMaxIncludes = true) {
     // - 4 Creo il numero random della cpu
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
+// - 5 Creo un addEventListener al submit
+formNumber.addEventListener('submit', function (event) {
+
+    // - 6 Blocco l'invio del form
+    event.preventDefault();
+
+    // - 7 Recupero i valori degli input
+    const userNumber = parseInt(userInputNumber.value);
+    const userEvenOdd = userElementEvenOdd.value;
+    console.log(userNumber, userEvenOdd);
+
+    // - 8 Genero il numero casuale della cpu
+    const randomNumberCpu = getRandomNumber(1, 5);
+    console.log(randomNumberCpu);
+
+    // - 9 Sommo i due numeri
+    const sum = userNumber + randomNumberCpu;
+    console.log(sum);
+
+    // - 10 Creo il messaggio
+    let message = `Somma valore giocatore e valore casuale CPU = ${sum}, quindi vince la <strong>CPU</strong>`;
+
+    // - 11 Creo un if per il pari
+    if (userEvenOdd === 'even' && sum % 2 === 0) {
+        message = `Somma valore giocatore e valore casuale CPU = ${sum}, quindi vince l' <strong>UTENTE</strong>`;
+    }
+
+    // - 12 Creo un if per il dispari
+    if (userEvenOdd === 'odd' && sum % 2 !== 0) {
+        message = `Somma valore giocatore e valore casuale CPU = ${sum}, quindi vince l' <strong>UTENTE</strong>`;
+    }
+
+    // - 13 Stampo il messaggio nella pagina
+    result.innerHTML = message;
+
+})
