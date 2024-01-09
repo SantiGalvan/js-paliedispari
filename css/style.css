@@ -9,3 +9,19 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+/* Main */
+
+/* Section Palindroma */
+#palindroma {
+    background-color: darkturquoise;
+    min-height: 600px;
+}
+
+.form-control {
+    width: 80%;
+}
+
+.label-palindroma {
+    font-size: 20px;
+}
