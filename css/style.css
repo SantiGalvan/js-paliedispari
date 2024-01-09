@@ -10,7 +10,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Main */
+/*? Main */
 
 /* Section Palindroma */
 #palindroma {
@@ -24,4 +24,11 @@ body {
 
 .label-palindroma {
     font-size: 20px;
+}
+
+
+/* Section Even and Odd */
+#even-odd {
+    background-color: yellowgreen;
+    min-height: 300px;
 }
