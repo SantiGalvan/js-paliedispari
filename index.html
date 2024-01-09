@@ -64,7 +64,7 @@
                 <div class="tile text-center mb-4">
                     <h1>Pari o Dispari?</h1>
                 </div>
-                <form>
+                <form id="form-even-odd">
                     <div class="row mb-3">
                         <label for="user-number" class="col-sm-2 col-form-label">Scegli un numero</label>
                         <div class="col-sm-10">
@@ -75,13 +75,13 @@
                         <legend class="col-form-label col-sm-2 pt-0">Pari o Dispari?</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="even" value="even">
+                                <input class="form-check-input" type="radio" id="even" value="even">
                                 <label class="form-check-label" for="even">
                                     Pari
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="odd" value="odd">
+                                <input class="form-check-input" type="radio" id="odd" value="odd">
                                 <label class="form-check-label" for="odd">
                                     Dispari
                                 </label>
@@ -90,6 +90,8 @@
                     </fieldset>
                     <button class="btn btn-primary">Genera</button>
                 </form>
+
+                <h4 id="result-even-odd" class="m-4"></h4>
             </div>
         </section>
     </main>
